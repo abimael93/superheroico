@@ -1,0 +1,54 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	
+	
+</head>
+<body ng-app>
+	
+	<div class="container">
+		<h1>Formulario de Angularjs</h1>
+		<hr>
+
+		<form role="form" name="forma">
+			<div class="form-group" ng-class="{'has-error':forma.nombreU.$invalid, 'has-success':forma.nombreU.$valid}">
+				<label for="inputNombre">Nombre</label>
+				<input id="inputNombre" type="text"  class="form-control" name="nombreU" ng-model="usuario.nombre" required>
+			</div>
+
+			<div class="form-group" ng-class="{'has-error':forma.emailU.$invalid, 'has-success':forma.emailU.$valid}">
+				<label for="inputEmail">Email</label>
+				<input id="inputEmail"  type="email" class="form-control" name="emailU" ng-model="usuario.email" required>
+
+				<div ng-show="forma.emailU.$dirty && forma.emailU.$invalid">
+			        <p class="help-block text-danger" ng-show="forma.emailU.$error.required">Campo obligatorio</p>
+			        <p class="help-block text-danger" ng-show="forma.emailU.$error.email">Email invalido</p>
+			    </div>
+			</div>
+
+
+			<div class="checkbox">
+				<label for="">
+					<input type="checkbox" name="aceptoU" ng-model="usuario.acepto" required> Acepto.
+				</label>
+			</div>
+			<button class="btn btn-success" ng-disabled="forma.$invalid">Registrar</button>
+
+		</form>
+		<hr>
+		<span class="lead text-primary"></span>
+
+	</div>
+
+
+
+	<script src="js/angular-locale_es-es.js"></script>
+	<script src="js/ejemplos.js"></script>
+	<script src="js/angular.min.js"></script>	
+	<script src="js/jquery.js"></script>	
+	<script src="js/bootstrap.js"></script>	
+</body>
+</html>
