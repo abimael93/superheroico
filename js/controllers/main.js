@@ -1,12 +1,40 @@
 var miAp = angular.module('miAp',[]);
 
-miAp.factory('Dato',function(){
-	return {mensaje: 'Saludo desde la fabrica'};
+miAp.factory('Fabrica',function(){
+	var servicio = {
+
+		objeto : {mensaje: 'Saludos desde la Fabrica!'},
+		msjInicial: function(){
+			servicio.objeto['mensaje'] = 'Saludos desde la Fabrica!';
+		},
+		msjNuevo: function(msj){
+			servicio.objeto.mensaje = msj;
+		}
+	};
+	return servicio;
 });
-function ControladorUno ($scope, Dato) {
-	$scope.dato = Dato;
+
+function ControladorUno ($scope, Fabrica) {
+	$scope.nuevo = function(){
+		Fabrica.msjNuevo($scope.nuevoMensaje);
+	};
+
+	$scope.dato = Fabrica.objeto;
 };
 
-function ControladorDos ($scope, Dato) {
-	$scope.dato = Dato;
+function ControladorDos ($scope, Fabrica) {
+	$scope.nuevo = function(){
+		Fabrica.msjNuevo($scope.nuevoMensaje);
+	};
+
+	$scope.dato = Fabrica.objeto;
+};
+
+function ControladorTres ($scope, Fabrica) {
+	$scope.resetear = function(){
+		Fabrica.msjInicial();	
+	};
+
+	
+	
 };
