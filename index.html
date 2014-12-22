@@ -12,16 +12,25 @@
 		
 		<span class="lead text-info">Controlador 1</span>
 		<div ng-controller = "ControladorUno">
-			<input type="text" ng-model="dato.mensaje" size="50">
+			<input type="text" ng-model="nuevoMensaje" size="50">
+			<button class="btn btn-success" ng-click="nuevo()"> Guardar</button>
 			<h1 class="text-info">{{dato.mensaje}}!</h1>
 		</div>
 		
 		<span class="lead text-info">Controlador 2</span>
 		<div ng-controller = "ControladorDos">
-			<input type="text" placeholder="Escribe tu nombre" size="50" ng-model="dato.mensaje">
+			<input type="text" size="50" ng-model="nuevoMensaje">
+			<button class="btn btn-success" ng-click="nuevo()"> Guardar</button>
 			<h1 class="text-warning">{{dato.mensaje}}!</h1>
 		</div>
+		
+		<div ng-controller="ControladorTres">
+			<button class="btn btn-primary" ng-click="resetear()"> Mensaje principal</button>	
+		</div>
+		
 	</div>
+
+
 
 
 	<script src="js/angular.min.js"></script>
