@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Introduccion</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/controllers/main.js"></script>
+</head>
+<body ng-app="miAp">
+	<div class="container">
+		<h1>Compartir datos entre Fabricass</h1>
+		
+		<span class="lead text-info">Controlador 1</span>
+		<div ng-controller = "ControladorUno">
+			<input type="text" ng-model="dato.mensaje" size="50">
+			<h1 class="text-info">{{dato.mensaje}}!</h1>
+		</div>
+		
+		<span class="lead text-info">Controlador 2</span>
+		<div ng-controller = "ControladorDos">
+			<input type="text" placeholder="Escribe tu nombre" size="50" ng-model="dato.mensaje">
+			<h1 class="text-warning">{{dato.mensaje}}!</h1>
+		</div>
+	</div>
+</body>
+</html>
