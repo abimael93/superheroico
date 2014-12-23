@@ -1,0 +1,46 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rutas angular</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+		
+</head>
+<body ng-app="miAp">
+	
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-terget="#example">
+				<span class="sr-only">Desplegar navegacion</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">Menu</a>
+
+		</div>
+
+		<div class="collapse navbar-collapse" id="example">
+			<ul class="nav navbar-nav">
+				<li><a href="#/empleados/">empleados</a></li>
+				<li><a href="#/tareas/">tareas</a></li>
+			</ul>			
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div ng-view>
+			
+		</div>	
+	</div>
+
+
+	<script src="js/angular-locale_es-es.js"></script>
+    <script src="js/ejemplos.js"></script>
+    <script src="js/angular.min.js"></script>  
+    <script src="js/jquery.js"></script> 
+    <script src="js/bootstrap.js"></script>
+    <script src="js/controllers/listadetareas.js"></script>
+    <script src="js/angular-route.min.js"></script>
+</body>
+</html>
