@@ -1,0 +1,42 @@
+<!DOCTYPE  html>
+<!--ng-app hace referencia al nombre de nuestro modulo-->
+<html lang="es" ng-app="app">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <div class="row" ng-controller="myController">
+ 
+            <h1 class="subheader">Crear un sencillo filtro en angularjs</h1>
+            <ul class="panel callout radius">
+                <!--ordenamos descendentemente pasando como tercer parámetro true en
+                la directiva ng-repeat-->
+                <li ng-repeat="user in users | orderBy:'nombre':true">
+                    <p>Nombre: {{ user.nombre | capitalize }}</p>
+                </li>
+            </ul>
+ 
+            <h1 class="subheader">Filtro toUpper en angularjs</h1>
+            <ul class="panel callout radius">
+                <li ng-repeat="user in users">
+                    <!--utilizamos el filtro toUpper que hemos creado-->
+                    <p>Nombre: {{ user.nombre | toUpper }}</p>
+                </li>
+            </ul>
+ 
+            <h1 class="subheader">Filtro toUpper en angularjs</h1>
+            <ul class="panel callout radius">
+                <li ng-repeat="user in users">
+                    <!--usamos el filtro que hemos creado maxLength y le
+                    decimos que a los 5 carácteres nos ponga puntos suspensivos,
+                    aparte también usamos el filtro capitalize-->
+                    <p>Nombre: {{ user.nombre | maxLength : 5 | capitalize }}</p>
+                </li>
+            </ul>
+ 
+        </div>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+ 
+    </body>
+</html>
