@@ -2,12 +2,11 @@ var todos = angular.module('todos', ['ui.bootstrap']);
 todos.controller('TodoController', function($scope) {
    $scope.filteredTodos = []
   ,$scope.currentPage = 1
-  ,$scope.numPerPage = 5
+  ,$scope.numPerPage = 10
   ,$scope.maxSize = 3;
   
   $scope.makeTodos = function() {
-    $scope.todos = [];
-    for (i=1;i<=1000;i++)
+    
     $scope.todos=[
     
        {'phone': 'Nexus S'},
@@ -34,10 +33,11 @@ todos.controller('TodoController', function($scope) {
     
     ];
   };
-  $scope.makeTodos(); 
+  $scope.makeTodos();
+  var tamano = $scope.todos.length;
   
   $scope.numPages = function () {
-    return Math.ceil($scope.todos.length / $scope.numPerPage);
+    return Math.ceil(tamano / $scope.numPerPage);
   };
   
   $scope.$watch('currentPage + numPerPage', function() {
