@@ -16,13 +16,16 @@
                          {name:'Mike', phone:'555-4321'},
                          {name:'Adam', phone:'555-5678'},
                          {name:'Julie', phone:'555-8765'},
+                         {name:'Abimael', phone:'3651-6998'},
+                         {name:'Cesar Herrera', phone:'3651-1264'},
+                         {name:'Ramón Lozano', phone:'1232-2809'},
                          {name:'Julié Maaa' , phone:'555-8765'},
                          {name:'Juliette', phone:'555-5678'}]"></div>
 Any: <input ng-model="search.$"> <br>
 Name only <input ng-model="search.name"><br>
 Phone only <input ng-model="search.phone"><br>
 Equality <input type="checkbox" ng-model="strict"><br>
-<table id="searchObjResults">
+<table>
   <tr><th>Name</th><th>Phone</th></tr>
   <tr ng-repeat="friendObj in friends | filter:search:strict">
     <td>{{friendObj.name}}</td>
