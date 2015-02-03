@@ -13,32 +13,27 @@
         </li>
     </ul>
 </div>
-<a ng-click="openModal('lg')">Abrir modal</a>
+ <button class="btn btn-default" ng-click="openModal('lg')">Open me!</button>
+
 
 <!--template para las modales-->
 <script type="text/ng-template" id="myModal.html">
-    
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="alert" ng-click="cancel()">&times;</button>
-        <h3 class="modal-title">Mi ventana modal</h3>        
-    </div>
-    <div class="modal-body">
-        <div>
-            {{ items[1].id }}
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
         </div>
-        <li ng-repeat="data in items">
-            <p>Id: {{ data.id }} Nombre: {{ data.nombre }} Profesión: {{ data.profesion }}</p>
-        </li>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-success form-control" ng-click="save('hey')">Salvar</button>
-        <div class="divider-lg"></div><br>
-        <button class="btn btn-warning form-control" ng-click="cancel()">Cerrar modal</button>
-    </div>
-    <form action="home_submit" method="get" accept-charset="utf-8">
-        <label>Nombre del Cliente:</label>
-        <input type="text" value="{{items[0].nombre}}">
-    </form>
-</script>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
 
 <!--./template para las modales-->
